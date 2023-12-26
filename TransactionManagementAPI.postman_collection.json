@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "041caa75-ba0d-4fae-b89b-edfb3a349530",
+		"name": "TransactionManagementAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31010328"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/4\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"4\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterTransactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/filter?filter=Charity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Charity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SortTransactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/sort?sortBy=Amount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"sort"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "Amount"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"fromAccountId\": 567,\n  \"toAccountId\": 2147483647,\n  \"amount\": 0.01,\n  \"transactionDate\": \"2023-12-26T07:11:43.364Z\",\n  \"description\": \"desc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"fromAccountId\": 2147483647,\n  \"toAccountId\": 2147483647,\n  \"amount\": 0.01,\n  \"transactionDate\": \"2023-12-26T07:54:14.432Z\",\n  \"description\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/2\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"2\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"fromAccountId\": 2147483647,\n  \"toAccountId\": 2147483647,\n  \"amount\": 0.01,\n  \"transactionDate\": \"2023-12-26T07:54:14.432Z\",\n  \"description\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/2\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"2\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"operationType\": 0,\n    \"path\": \"Description\",\n    \"op\": \"replace\",\n    \"from\": \"string\",\n    \"value\": \"Update Description\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5004/api/Transactions/4\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transactions",
+						"4\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
