@@ -103,12 +103,34 @@
 		},
 		{
 			"name": "Create",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json-patch+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"id\": 0,\n  \"fromAccountId\": 567,\n  \"toAccountId\": 2147483647,\n  \"amount\": 0.01,\n  \"transactionDate\": \"2023-12-26T07:11:43.364Z\",\n  \"description\": \"desc\"\n}",
+					"raw": "{\n  \"id\": 0,\n  \"fromAccountId\": 2147483647,\n  \"toAccountId\": 2147483647,\n  \"amount\": 0.01,\n  \"transactionDate\": \"2023-12-26T12:58:53.693Z\",\n  \"description\": \"string\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -116,7 +138,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5004/api/Transactions\n",
+					"raw": "http://localhost:5004/api/Transactions",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -124,7 +146,7 @@
 					"port": "5004",
 					"path": [
 						"api",
-						"Transactions\n"
+						"Transactions"
 					]
 				}
 			},
